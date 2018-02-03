@@ -68,10 +68,10 @@ install:
     
       elif [ "$OS" = "mac" ]; then
         brew update
-        brew outdated python || brew install python
+        brew outdated python || brew upgrade python
 
         # Need inkscape >=0.92 for inkex.py and friends
-        brew install caskformula/caskformula/inkscape
+        travis_wait 30 brew install caskformula/caskformula/inkscape
 
         # for embroidermodder/libembroidery
         brew install swig
