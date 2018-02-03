@@ -20,7 +20,7 @@ matrix:
     sudo: required
     env: BUILD=true OS=linux
     if: tag =~ ^v[0-9.]+$ OR branch != master
-  - python: 2.7
+  - language: generic
     os: osx
     sudo: required
     env: BUILD=true OS=mac
@@ -67,6 +67,9 @@ install:
         pip install --no-binary shapely -r requirements.txt
     
       elif [ "$OS" = "mac" ]; then
+        brew update
+        brew outdated python || brew install python
+
         # Need inkscape >=0.92 for inkex.py and friends
         brew install caskformula/caskformula/inkscape
 
