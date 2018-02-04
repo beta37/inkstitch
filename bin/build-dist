@@ -7,7 +7,7 @@ echo "site_packages: $site_packages"
 which python
 echo "PYTHONPATH: $PYTHONPATH"
 python -c "import wx"
-find venv
+python -c "from gi.repository import Gtk"
 echo "END DEBUG"
 
 if [ "$TRAVIS_OS_NAME" = "linux" ]; then
