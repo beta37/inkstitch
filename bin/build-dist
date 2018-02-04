@@ -2,6 +2,14 @@
 
 site_packages="$(python -c "import os; print(os.path.dirname(os.__file__) + '/site-packages')")"
 
+echo "DEBUG:"
+echo "site_packages: $site_packages"
+which python
+echo "PYTHONPATH: $PYTHONPATH"
+python -c "import wx"
+find venv
+echo "END DEBUG"
+
 if [ "$TRAVIS_OS_NAME" = "linux" ]; then
     # pyinstaller misses these two
     pyinstaller_args+="--add-binary /usr/lib/x86_64-linux-gnu/gio/modules/libgiolibproxy.so:. "
