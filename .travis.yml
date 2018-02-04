@@ -69,6 +69,7 @@ install:
         mkdir -p /Users/travis/Library/Python/2.7/lib/python/site-packages
 
         brew install pygobject
+        brew ls --verbose pygobject
 
         export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
