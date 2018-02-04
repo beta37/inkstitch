@@ -68,8 +68,8 @@ install:
         # brew told me to do this
         mkdir -p /Users/travis/Library/Python/2.7/lib/python/site-packages
 
-        # the 3 here signifies gtk3, not python3
-        brew install pygobject3
+        # the 3 in pygobject3 signifies gtk3, not python3
+        brew install pygobject3 gtk+3
 
         echo "FINDING IT"
         find /usr/local -name '*typelib*'
