@@ -70,7 +70,7 @@ install:
 
         # the 3 here signifies gtk3, not python3
         brew install pygobject3
-        #brew ls --verbose pygobject
+        brew ls --verbose pygobject3
 
         export GI_TYPELIB_PATH=/usr/local/lib/girepository-1.0
 
