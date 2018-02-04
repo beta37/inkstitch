@@ -1,4 +1,4 @@
--language: python
+language: python
 virtualenv:
   # We need this for PyGObject.
   system_site_packages: true
@@ -82,6 +82,7 @@ install:
 
         # for qmake
         brew install qt
+        export PATH="/usr/local/opt/qt/bin:$PATH"
       fi
 
       # Need this for inkex.py and friends
