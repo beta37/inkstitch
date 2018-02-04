@@ -72,6 +72,8 @@ install:
         brew install pygobject3
         #brew ls --verbose pygobject
 
+        export GI_TYPELIB_PATH=/usr/local/lib/girepository-1.0
+
         export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
         sudo pip install virtualenv
