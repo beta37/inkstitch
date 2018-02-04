@@ -18,12 +18,12 @@ matrix:
   # only bother to build if we're going to deploy a release
   - python: 2.7
     sudo: required
-    env: BUILD=true OS=linux
+    env: BUILD=true
     if: tag =~ ^v[0-9.]+$ OR branch != master
   - language: generic
     os: osx
     sudo: required
-    env: BUILD=true OS=mac
+    env: BUILD=true
     if: tag =~ ^v[0-9.]+$ OR branch != master
 branches:
   except:
@@ -32,7 +32,7 @@ cache: pip
 install:
   - |
     if [ -n "$BUILD" ]; then
-      if [ "$OS" = "linux" ]; then
+      if [ "$TRAVIS_OS_NAME" = "linux" ]; then
         # For some bizarre reason, this build has been failing due to the
         # key for the mongodb repo expiring.  Maybe Travis includes the
         # mongodb repo by default...?
@@ -61,9 +61,15 @@ install:
         # https://github.com/pyinstaller/pyinstaller/blob/61b1c75c2b0469b32d114298a63bf60b8d597e37/PyInstaller/hooks/hook-shapely.py#L34
         pip install --no-binary shapely -r requirements.txt
     
-      elif [ "$OS" = "mac" ]; then
+      elif [ "$TRAVIS_OS_NAME" = "osx" ]; then
         brew update
         brew outdated python || brew upgrade python
+
+        export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
+        sudo pip install virtualenv
+        virtualenv venv
+        source venv/bin/activate
 
         # for embroidermodder/libembroidery
         brew install swig
@@ -76,8 +82,6 @@ install:
 
         # for qmake
         brew install qt
-
-        sudo easy_install pip
       fi
 
       # Need this for inkex.py and friends
