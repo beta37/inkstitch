@@ -69,7 +69,7 @@ install:
         mkdir -p /Users/travis/Library/Python/2.7/lib/python/site-packages
 
         brew install pygobject
-        brew ls --verbose pygobject
+        #brew ls --verbose pygobject
 
         export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
@@ -78,6 +78,9 @@ install:
 
         # add in brew's site-packages
         echo 'import site; site.addsitedir("/usr/local/lib/python2.7/site-packages")' >> venv/lib/python2.7/site-packages/homebrew.pth
+
+        # add in pygobject's site-packages
+        echo 'import site; site.addsitedir("/usr/local/Cellar/pygobject/2.28.7_1/lib/python2.7/site-packages")' >> venv/lib/python2.7/site-packages/pygobject.pth
 
         source venv/bin/activate
 

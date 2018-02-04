@@ -4,6 +4,7 @@ site_packages="$(python -c "import os; print(os.path.dirname(os.__file__) + '/si
 
 echo "DEBUG:"
 echo "site_packages: $site_packages"
+python -c "import sys; print ':'.join(sys.path)"
 which python
 echo "PYTHONPATH: $PYTHONPATH"
 python -c "import wx"
