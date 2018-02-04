@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# for the cp line below
+shopt -s dotglob
+
 site_packages="$(python -c "import os; print(os.path.dirname(os.__file__) + '/site-packages')")"
 
 echo "DEBUG:"
