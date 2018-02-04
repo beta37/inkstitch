@@ -78,8 +78,14 @@ install:
 
         brew install pygobject
 
+        # brew told me to do this
+        mkdir -p /Users/travis/Library/Python/2.7/lib/python/site-packages
+        echo 'import site; site.addsitedir("/usr/local/lib/python2.7/site-packages")' >> /Users/travis/Library/Python/2.7/lib/python/site-packages/homebrew.pth
+
         # for qmake
         brew install qt
+
+        sudo easy_install pip
       fi
 
       pip install pyinstaller
