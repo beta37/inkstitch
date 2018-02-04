@@ -70,11 +70,14 @@ install:
 
         brew install pygobject
 
-        export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
         export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
         sudo pip install virtualenv
         virtualenv --system-site-packages venv
+
+        # add in brew's site-packages
+        echo 'import site; site.addsitedir("/usr/local/lib/python2.7/site-packages")' >> venv/lib/python2.7/site-packages/homebrew.pth
+
         source venv/bin/activate
 
         # for embroidermodder/libembroidery
