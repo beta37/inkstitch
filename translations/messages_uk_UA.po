@@ -1,10 +1,10 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: inkstitch\n"
+"Project-Id-Version: inkstitch-test\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-04 16:24-0500\n"
-"PO-Revision-Date: 2018-02-04 22:39-0500\n"
-"Last-Translator: lexelby <github.com@lexneva.name>\n"
+"PO-Revision-Date: 2018-02-13 11:05-0500\n"
+"Last-Translator: mikolay <mikolay@crowdin.com>\n"
 "Language-Team: Ukrainian\n"
 "Language: uk_UA\n"
 "MIME-Version: 1.0\n"
@@ -12,13 +12,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: crowdin.com\n"
-"X-Crowdin-Project: inkstitch\n"
+"X-Crowdin-Project: inkstitch-test\n"
 "X-Crowdin-Language: uk\n"
 "X-Crowdin-File: /master/messages.po\n"
 
 #: embroider.py:45
 msgid "Manually routed fill stitching"
-msgstr ""
+msgstr "Вручну маршрутизувати заповнити шити"
 
 #: embroider.py:50
 msgid "Angle of lines of stitches"
@@ -50,7 +50,7 @@ msgstr ""
 
 #: embroider.py:397
 msgid "Underlay"
-msgstr ""
+msgstr "Підкладати"
 
 #: embroider.py:397 embroider.py:402 embroider.py:413 embroider.py:419
 msgid "AutoFill Underlay"
@@ -66,7 +66,7 @@ msgstr ""
 
 #: embroider.py:419
 msgid "Max stitch length"
-msgstr ""
+msgstr "Максимальна довжина стібка"
 
 #: embroider.py:540
 msgid "Unable to autofill.  This most often happens because your shape is made up of multiple sections that aren't connected."
